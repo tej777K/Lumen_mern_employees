@@ -18,12 +18,14 @@ jobs:
 
       - name: Build and Push Client Image
         run: |
-          docker build -t tej7k/frontend ./client
-          docker push tej7k/frontend:latest 
+          docker build -t frontend ./client
+          docker tag frontend tej7k/frontend:latest
+          docker push tej7k/frontend:latest
 
       - name: Build and Push Server Image
         run: |
-          docker build -t tej7k/backend ./server
+          docker build -t backend ./server
+          docker tag backend tej7k/backend:latest
           docker push tej7k/backend:latest
 
   deploy:
