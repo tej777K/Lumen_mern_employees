@@ -1,0 +1,13 @@
+version: '3'
+services:
+  client:
+    image: ghcr.io/your-username/mern-client:latest
+    ports:
+      - "3000:3000"
+
+  server:
+    image: ghcr.io/your-username/mern-server:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - ATLAS_URI="mongodb+srv://<db_username>:<db_password>@employees.kel2i.mongodb.net/?retryWrites=true&w=majority&appName=employees"
