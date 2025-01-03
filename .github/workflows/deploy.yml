@@ -40,3 +40,7 @@ jobs:
           docker pull tej7k/frontend:latest
           docker pull tej7k/backend:latest
           docker-compose -f docker-compose.prod.yml up -d
+
+          
+
+
