@@ -20,13 +20,13 @@ jobs:
         run: |
           docker build -t frontend ./client
           docker tag frontend tej7k/frontend:latest
-          docker push docker.io/tej7k/frontend:latest
+          docker push tej7k/frontend:latest
 
       - name: Build and Push Server Image
         run: |
           docker build -t backend ./server
           docker tag backend tej7k/backend:latest
-          docker push docker.io/tej7k/backend:latest
+          docker push tej7k/backend:latest
 
   deploy:
     name: Deploy to EC2
