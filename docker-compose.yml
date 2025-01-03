@@ -1,13 +1,13 @@
 version: '3'
 services:
   client:
-    image: ghcr.io/tej7k/mern-client:latest
+    image: tej7k/frontend:latest
     ports:
       - "3000:3000"
 
   server:
-    image: ghcr.io/tej7k/mern-server:latest
+    image: tej7k/backend:latest
     ports:
-      - "5000:5000"
+      - "5000:5000" 
     environment:
-      - ATLAS_URI="mongodb+srv://<db_username>:<db_password>@employees.kel2i.mongodb.net/?retryWrites=true&w=majority&appName=employees"
+      - ATLAS_URI="mongodb+srv://Jais07k:Jais@mongo07k@employees.kel2i.mongodb.net/?retryWrites=true&w=majority&appName=employees"
