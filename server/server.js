@@ -19,3 +19,6 @@ dbo.connectToMongoDB(function (error) {
         console.log("Server is running on port: " + port)
     })
 })
+
+const dotenv = require("dotenv");
+dotenv.config();
