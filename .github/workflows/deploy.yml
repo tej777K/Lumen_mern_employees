@@ -21,13 +21,13 @@ jobs:
 
       - name: Build and Push Client Image
         run:
-          docker build -t frontend ./client
+          docker build . -t frontend -f client/Dockerfile
           docker tag frontend tej7k/frontend:latest
           docker push tej7k/frontend:latest
 
       - name: Build and Push Server Image
         run: |
-          docker build -t backend ./server
+          docker build . -t backend -f server/Dockerfile
           docker tag backend tej7k/backend:latest
           docker push tej7k/backend:latest
 
@@ -41,6 +41,6 @@ jobs:
           docker pull tej7k/backend:latest
           docker-compose -f docker-compose.prod.yml up -d
 
-          
+
 
 
