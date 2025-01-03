@@ -13,11 +13,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Log in to GitHub Container Registry
-        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p {{secrets.DOCKER_PASSWORD}}
+      - name: Login to docker hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
 
       - name: Build and Push Client Image
-        run: |
+        run:
           docker build -t frontend ./client
           docker tag frontend tej7k/frontend:latest
           docker push tej7k/frontend:latest
